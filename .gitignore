@@ -1,0 +1,72 @@
+# Build outputs and compiled executables
+*.exe
+*.bat
+*.vbs
+*.sed
+*.p12
+*.zip
+*.ico
+
+# Python cache
+*.pyc
+__pycache__/
+*.pyo
+.pytest_cache/
+
+# IDE configuration
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.csproj
+*.vcxproj
+
+# OS system files
+Thumbs.db
+.DS_Store
+*.lnk
+Desktop.ini
+$RECYCLE.BIN/
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+%TEMP%/
+temp/
+tmp/
+*.tmp
+
+# Package managers
+node_modules/
+packages/
+vendor/
+
+# Environment files (security)
+.env
+.env.local
+*.secret
+
+# C# build artifacts
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Network/FTP
+*.ftppub
+*.ftpquota
+
+# Remote server cache
+*.url
+*.urlcache
